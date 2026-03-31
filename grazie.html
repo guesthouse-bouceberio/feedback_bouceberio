@@ -5,8 +5,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Grazie per il feedback</title>
+<title>Grazie</title>
 
+<meta name="description" content="Accoglienti appartamenti indipendenti per vacanze a Fénis in Valle d'Aosta. Vicino al Castello di Fénis, Aosta e alle montagne più belle della regione.">
+
+<meta property="og:title" content="Appartamento Vacanze a Fénis">
+<meta property="og:description" content="Scopri i nostri appartamenti nel cuore della Valle d'Aosta">
+<meta property="og:type" content="website">
+<meta property="og:image" content="header.jpg">
+
+<meta name="theme-color" content="#2f5d50">
+
+<!-- PERFORMANCE FONT -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
@@ -75,12 +89,78 @@ p{
   transform:translateY(-2px);
 }
 
+  /* HEADER */
+
+header{
+background:
+linear-gradient(rgba(9, 9, 9, 1), rgba(20,40,35,0.55)),
+url('header_transparent.png') center bottom/contain no-repeat;
+
+width:100%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+ /* LOGO */
+ .logo {
+  width: 33%;
+  max-width: 1536px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .logo {
+    width: 70%;
+  }
+}
+
+  /* TRADUTTORE PULITO */
+
+#google_translate_element{
+margin-top:15px;
+text-align:center;
+}
+
+.goog-logo-link {
+display:none !important;
+}
+
+.goog-te-gadget span {
+display:none !important;
+}
+
+.goog-te-gadget {
+color:transparent !important;
+}
+
+.goog-te-gadget select{
+padding:6px 10px;
+border-radius:8px;
+border:none;
+font-size:14px;
+width: auto;
+display: inline-block;
+}
+  
 </style>
 
 </head>
 
 <body>
+<header>
 
+<img src="logo_transparent.png" class="logo">
+
+
+<div id="google_translate_element"></div>
+
+</header>
+  
 <div class="container">
 
   <div class="icon">🙏</div>
@@ -100,5 +180,6 @@ p{
 
 </div>
 
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
