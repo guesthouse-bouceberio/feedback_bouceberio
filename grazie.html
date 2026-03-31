@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Feedback del soggiorno</title>
+<title>Grazie</title>
 
 <meta name="description" content="Accoglienti appartamenti indipendenti per vacanze a Fénis in Valle d'Aosta. Vicino al Castello di Fénis, Aosta e alle montagne più belle della regione.">
 
@@ -29,17 +29,68 @@
 /* BASE */
 
 body{
-font-family:'Inter', sans-serif;
-margin:0;
-color:#333;
+  font-family:'Inter', sans-serif;
+  margin:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:100vh;
+  text-align:center;
 
-background: linear-gradient(
-  to bottom,
-  #bcd8cc 0%,
-  #8fb3a3 30%,
-  #d6cec2 70%,
-  #b8aea0 100%
-);
+  background: linear-gradient(
+    to bottom,
+    #bcd8cc 0%,
+    #8fb3a3 30%,
+    #d6cec2 70%,
+    #b8aea0 100%
+  );
+}
+
+.container{
+  background: rgba(255,255,255,0.95);
+  padding:40px 30px;
+  border-radius:20px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.15);
+  max-width:500px;
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(15px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+h1{
+  font-family:'Playfair Display', serif;
+  color:#2f5d50;
+  margin-bottom:10px;
+}
+
+p{
+  color:#555;
+  font-size:15px;
+  margin-bottom:25px;
+}
+
+.icon{
+  font-size:50px;
+  margin-bottom:15px;
+}
+
+.button{
+  display:inline-block;
+  padding:12px 20px;
+  border-radius:30px;
+  background:#2f5d50;
+  color:white;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.button:hover{
+  background:#1f3f35;
+  transform:translateY(-2px);
+}
 
 background-attachment: fixed;
 }
@@ -92,120 +143,6 @@ border:none;
 font-size:14px;
 width: auto;
 display: inline-block;
-}
-
-/* CONTAINER */
-
-.container{
-max-width:850px;
-margin:40px auto;
-
-background: #ffffff;
-backdrop-filter: blur(6px);
-border-radius: 20px;
-
-padding: 25px;
-box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-animation: fadeIn 0.6s ease;
-    }
-@keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px);} 
-      to { opacity: 1; transform: translateY(0);} 
-    }
-
-    h1 {
-  text-align: center;
-  font-size: 30px;
-  margin-bottom: 25px;
-  color: #2f5d50;
-  position: relative;
-}
-
-h1::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: #8CBDAA;
-  margin: 10px auto 0;
-  border-radius: 2px;
-}
-
-    .question {
-  margin-bottom: 18px;
-  padding: 16px;
-  border-radius: 14px;
-  background: #f1f5f4;
-  border: 1px solid #d6e0dc;
-  transition: 0.25s;
-}
-
-.question:hover {
-  background: #edf3f1;
-  transform: translateY(-2px);
-}
-
-  .question label {
-  display: block;
-  font-weight: 500;
-  margin-bottom: 6px;
-  color: #2f5d50;
-  font-size: 15px;
-}
-
-  .question:focus-within {
-  border-color: #8CBDAA;
-  box-shadow: 0 0 0 2px rgba(140,189,170,0.2);
-}
-    .stars { display: flex; gap: 6px; font-size: 26px; cursor: pointer; }
-
-   .stars span {
-  color: #ddd;
-  transition: transform 0.2s, color 0.2s;
-}
-
-.stars span:hover {
-  transform: scale(1.2);
-}
-
-.stars span.active {
-  color: #f5b301;
-}
-
-   textarea, select {
-  width: 100%;
-  padding: 12px;
-  border-radius: 10px;
-  border: 1px solid #dcdcdc;
-  margin-top: 6px;
-  font-size: 14px;
-  background: #fcfcfc;
-  transition: 0.2s;
-  box-sizing: border-box;
-}
-
-textarea:focus, select:focus {
-  border-color: #8CBDAA;
-  outline: none;
-  background: white;
-}
-
-    button {
-  width: 100%;
-  padding: 14px;
-  border: none;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #2f5d50, #3f7a6b);
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
-  font-weight: 500;
-}
-
-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
   
 
