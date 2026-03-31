@@ -110,36 +110,95 @@ background: white;
       to { opacity: 1; transform: translateY(0);} 
     }
 
-    h1 { text-align: center; }
+    h1 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 25px;
+  color: #2f5d50;
+  position: relative;
+}
 
-    .question { margin-bottom: 18px; }
+h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #8CBDAA;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+    .question {
+  margin-bottom: 18px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: #f8faf9;
+  border: 1px solid #e6ecea;
+  transition: 0.2s;
+}
+
+.question:hover {
+  background: #f1f6f4;
+  transform: translateY(-2px);
+}
+
+  .question label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #2f5d50;
+  font-size: 15px;
+}
 
     .stars { display: flex; gap: 6px; font-size: 26px; cursor: pointer; }
 
-    .stars span { color: #ddd; transition: transform 0.2s; }
-    .stars span.active { color: #f5b301; transform: scale(1.2); }
+   .stars span {
+  color: #ddd;
+  transition: transform 0.2s, color 0.2s;
+}
 
-    textarea, select {
-      width: 100%;
-      padding: 10px;
-      border-radius: 10px;
-      border: 1px solid #ccc;
-      margin-top: 5px;
-    }
+.stars span:hover {
+  transform: scale(1.2);
+}
+
+.stars span.active {
+  color: #f5b301;
+}
+
+   textarea, select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #dcdcdc;
+  margin-top: 6px;
+  font-size: 14px;
+  background: #fcfcfc;
+  transition: 0.2s;
+}
+
+textarea:focus, select:focus {
+  border-color: #8CBDAA;
+  outline: none;
+  background: white;
+}
 
     button {
-      width: 100%;
-      padding: 14px;
-      border: none;
-      border-radius: 12px;
-      background: #0077ff;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-      transition: 0.2s;
-    }
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #2f5d50, #3f7a6b);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+}
 
-    button:hover { background: #005fcc; }
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
   
 
 
