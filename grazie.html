@@ -1,1 +1,162 @@
+<!DOCTYPE html>
+<html lang="it">
 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Grazie per il feedback</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* HEADER */
+
+header{
+background:
+linear-gradient(rgba(9, 9, 9, 1), rgba(20,40,35,0.55)),
+url('header_transparent.png') center bottom/contain no-repeat;
+
+width:100%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+  
+body{
+  font-family:'Inter', sans-serif;
+  margin:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:100vh;
+  text-align:center;
+
+  background: linear-gradient(
+    to bottom,
+    #bcd8cc 0%,
+    #8fb3a3 30%,
+    #d6cec2 70%,
+    #b8aea0 100%
+  );
+}
+
+.container{
+  background: rgba(255,255,255,0.95);
+  padding:40px 30px;
+  border-radius:20px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.15);
+  max-width:500px;
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(15px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+h1{
+  font-family:'Playfair Display', serif;
+  color:#2f5d50;
+  margin-bottom:10px;
+}
+
+p{
+  color:#555;
+  font-size:15px;
+  margin-bottom:25px;
+}
+
+.icon{
+  font-size:50px;
+  margin-bottom:15px;
+}
+
+.button{
+  display:inline-block;
+  padding:12px 20px;
+  border-radius:30px;
+  background:#2f5d50;
+  color:white;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.button:hover{
+  background:#1f3f35;
+  transform:translateY(-2px);
+}
+/* TRADUTTORE PULITO */
+
+#google_translate_element{
+margin-top:15px;
+text-align:center;
+}
+
+.goog-logo-link {
+display:none !important;
+}
+
+.goog-te-gadget span {
+display:none !important;
+}
+
+.goog-te-gadget {
+color:transparent !important;
+}
+
+.goog-te-gadget select{
+padding:6px 10px;
+border-radius:8px;
+border:none;
+font-size:14px;
+}
+
+  /* LOGO */
+ .logo {
+  width: 33%;
+  max-width: 1536px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .logo {
+    width: 70%;
+  }
+}
+</style>
+
+</head>
+
+<body>
+<header>
+
+<img src="logo_transparent.png" class="logo">
+
+</header>
+<div class="container">
+
+  <div class="icon">🙏</div>
+
+  <h1>Grazie per il tuo feedback!</h1>
+
+  <p>
+    Il tuo parere è molto importante per noi e ci aiuta a migliorare continuamente
+    l’esperienza dei nostri ospiti.
+  </p>
+
+  <p>
+    Speriamo di rivederti presto in Valle d’Aosta! 🏔️
+  </p>
+
+  <a href="index.html" class="button">Torna al sito</a>
+
+</div>
+
+</body>
+</html>
