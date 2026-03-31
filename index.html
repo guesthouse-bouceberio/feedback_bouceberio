@@ -543,6 +543,34 @@ function googleTranslateElementInit() {
 
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
+  <script>
+const form = document.querySelector("form");
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault(); // blocca invio normale
+
+  // 👇 QUI
+  form.querySelector("button").innerText = "Invio in corso...";
+  form.querySelector("button").disabled = true;
+
+  fetch(form.action, {
+    method: "POST",
+    body: new FormData(form),
+    headers: {
+      'Accept': 'application/json'
+    }
+  }).then(() => {
+    window.location.href = "grazie.html";
+  }).catch(() => {
+    alert("Errore nell'invio, riprova.");
+    
+    // ripristina bottone in caso di errore
+    form.querySelector("button").innerText = "Invia feedback";
+    form.querySelector("button").disabled = false;
+  });
+});
+</script>
+  
 </body>
 </html>
 
