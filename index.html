@@ -2,99 +2,135 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>Valutazione Appartamento</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Soggiorno</title>
+
   <style>
-    body { font-family: Arial; max-width: 600px; margin: auto; padding: 20px; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #eef2f7, #ffffff);
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 750px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+      animation: fadeIn 0.6s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px);} 
+      to { opacity: 1; transform: translateY(0);} 
+    }
+
     h1 { text-align: center; }
-    .question { margin-bottom: 15px; }
-    label { display: block; margin-bottom: 5px; }
-    select, textarea, button {
+
+    .question { margin-bottom: 18px; }
+
+    .stars { display: flex; gap: 6px; font-size: 26px; cursor: pointer; }
+
+    .stars span { color: #ddd; transition: transform 0.2s; }
+    .stars span.active { color: #f5b301; transform: scale(1.2); }
+
+    textarea, select {
       width: 100%;
-      padding: 8px;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
       margin-top: 5px;
     }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      background: #0077ff;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover { background: #005fcc; }
   </style>
 </head>
+
 <body>
 
-<h1>Valuta il tuo soggiorno</h1>
+<div class="container">
 
-<form action="https://formspree.io/f/xgopyeqq" method="POST">
+  <h1>⭐ Valuta il tuo soggiorno</h1>
 
-  <div class="question">
-    <label>Pulizia</label>
-    <select name="pulizia">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-    </select>
-  </div>
+  <form action="https://formspree.io/f/xgopyeqq" method="POST">
 
-  <div class="question">
-    <label>Comfort del letto</label>
-    <select name="letto">
-      <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
-    </select>
-  </div>
+    <!-- Hidden inputs -->
+    <input type="hidden" name="Pulizia" id="pulizia">
+    <input type="hidden" name="Comfort" id="comfort">
+    <input type="hidden" name="Posizione" id="posizione">
+    <input type="hidden" name="Checkin" id="checkin">
+    <input type="hidden" name="Comunicazione" id="comunicazione">
+    <input type="hidden" name="Servizi" id="servizi">
+    <input type="hidden" name="Qualita" id="qualita">
 
-  <div class="question">
-    <label>Posizione</label>
-    <select name="posizione">
-      <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
-    </select>
-  </div>
+    <!-- Stelle -->
+    <div class="question"><label>Pulizia</label><div class="stars" data-target="pulizia"></div></div>
+    <div class="question"><label>Comfort</label><div class="stars" data-target="comfort"></div></div>
+    <div class="question"><label>Posizione</label><div class="stars" data-target="posizione"></div></div>
+    <div class="question"><label>Check-in</label><div class="stars" data-target="checkin"></div></div>
+    <div class="question"><label>Comunicazione host</label><div class="stars" data-target="comunicazione"></div></div>
+    <div class="question"><label>Servizi (WiFi, cucina...)</label><div class="stars" data-target="servizi"></div></div>
+    <div class="question"><label>Qualità/prezzo</label><div class="stars" data-target="qualita"></div></div>
 
-  <div class="question">
-    <label>Servizi (WiFi, cucina, ecc.)</label>
-    <select name="servizi">
-      <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
-    </select>
-  </div>
+    <!-- Extra -->
+    <div class="question">
+      <label>Consiglieresti questo appartamento?</label>
+      <select name="consiglio">
+        <option>Sì</option>
+        <option>No</option>
+      </select>
+    </div>
 
-  <div class="question">
-    <label>Check-in</label>
-    <select name="checkin">
-      <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
-    </select>
-  </div>
+    <div class="question">
+      <label>Cosa ti è piaciuto di più?</label>
+      <textarea name="positivo"></textarea>
+    </div>
 
-  <div class="question">
-    <label>Comunicazione con host</label>
-    <select name="comunicazione">
-      <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
-    </select>
-  </div>
+    <div class="question">
+      <label>Cosa possiamo migliorare?</label>
+      <textarea name="miglioramenti"></textarea>
+    </div>
 
-  <div class="question">
-    <label>Rapporto qualità/prezzo</label>
-    <select name="qualita">
-      <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
-    </select>
-  </div>
+    <button type="submit">Invia feedback</button>
 
-  <div class="question">
-    <label>Consiglieresti questo appartamento?</label>
-    <select name="consiglio">
-      <option>Sì</option>
-      <option>No</option>
-    </select>
-  </div>
+  </form>
 
-  <div class="question">
-    <label>Cosa ti è piaciuto di più?</label>
-    <textarea name="positivo"></textarea>
-  </div>
+</div>
 
-  <div class="question">
-    <label>Cosa possiamo migliorare?</label>
-    <textarea name="miglioramenti"></textarea>
-  </div>
+<script>
+  function createStars(container) {
+    for (let i = 1; i <= 5; i++) {
+      const star = document.createElement('span');
+      star.innerHTML = '★';
+      star.addEventListener('click', () => {
+        const stars = container.querySelectorAll('span');
+        stars.forEach((s, index) => {
+          s.classList.toggle('active', index < i);
+        });
+        document.getElementById(container.dataset.target).value = i;
+      });
+      container.appendChild(star);
+    }
+  }
 
-  <button type="submit">Invia feedback</button>
-
-</form>
+  document.querySelectorAll('.stars').forEach(createStars);
+</script>
 
 </body>
 </html>
+
