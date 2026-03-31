@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
-  <meta charset="UTF-8">
+
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Feedback del soggiorno</title>
@@ -22,7 +24,7 @@
 <!-- FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
-  <style>
+<style>
 
 /* BASE */
 
@@ -59,9 +61,45 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 }
-    
 
-    /* TRADUTTORE PULITO */
+
+/* NAV */
+nav {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 14px;
+  /* font-weight: bold; */
+  color: #f5f5f5; /* 👈 testo chiaro */
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  background: rgba(140, 189, 170, 0.5);
+  backdrop-filter: blur(8px);
+
+  padding: 10px 18px; /* leggermente più grande */
+  border-radius: 20px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* stesso effetto */
+
+  transition: all 0.3s ease;
+}
+
+/* HOVER */
+nav a:hover {
+  transform: translateY(-2px);
+  background: #7aa895; /* leggermente più scuro */
+}
+
+/* TRADUTTORE PULITO */
 
 #google_translate_element{
 margin-top:15px;
@@ -90,15 +128,18 @@ font-size:14px;
 /* CONTAINER */
 
 .container{
-max-width:1000px;
-margin:40px auto;
-padding:30px 20px;
-}
-    @keyframes fadeIn {
+max-width:700px;
+margin:auto;
+background: white;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+      animation: fadeIn 0.6s ease;
+    }
+@keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px);} 
       to { opacity: 1; transform: translateY(0);} 
     }
-
 
     h1 { text-align: center; }
 
@@ -117,49 +158,23 @@ padding:30px 20px;
       margin-top: 5px;
     }
 
-    /* BUTTON */
+    button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      background: #0077ff;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
 
-.button {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: #2f5d50;
-  color: white;
-  padding: 12px 22px;
-  text-decoration:none;
-  border-radius:30px;
-  margin:6px 4px;
-  font-size:15px;
-  font-weight:500;
-  transition:0.3s;
-  box-shadow:0 4px 12px rgba(0,0,0,0.15);
-  }
-
-  .button:hover{
-background:#1f3f35;
-transform:translateY(-2px);
-}
+    button:hover { background: #005fcc; }
   
-.button .icons {
-  display: flex;
-  gap: 8px;
-}
 
-.button a {
-  display: flex;
-}
 
-.button svg {
-  width: 22px;
-  height: 22px;
-  transition: transform 0.2s ease;
-}
-
-.button svg:hover {
-  transform: scale(1.15);
-}
-
-    /* FOOTER */
+/* FOOTER */
 
 footer{
 text-align:center;
@@ -222,7 +237,70 @@ color:#777;
   opacity: 0.85;
 }
 
-    /* LOGO */
+/* PRENOTA SUBITO */
+
+.prenota-float{
+position:fixed;
+bottom:120px;
+right:20px;
+
+background:#2f5d50;
+color:white;
+padding:12px 16px;
+border-radius:30px;
+font-size:14px;
+text-decoration:none;
+
+box-shadow:0 4px 12px rgba(0,0,0,0.25);
+z-index:1000;
+
+/* animazioni */
+animation:
+fadeInUp 0.6s ease,
+pulseSoft 4s 1s infinite;
+
+transition:0.3s;
+}
+
+/* HOVER */
+.prenota-float:hover{
+background:#1f3f35;
+transform:translateY(-3px) scale(1.05);
+box-shadow:0 8px 18px rgba(0,0,0,0.35);
+
+/* ferma animazione */
+animation:none;
+}
+
+/* ENTRATA */
+@keyframes fadeInUp{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* PULSE */
+@keyframes pulseSoft {
+0%{
+transform:scale(1);
+box-shadow:0 4px 12px rgba(0,0,0,0.25);
+}
+50%{
+transform:scale(1.05);
+box-shadow:0 8px 20px rgba(0,0,0,0.35);
+}
+100%{
+transform:scale(1);
+box-shadow:0 4px 12px rgba(0,0,0,0.25);
+}
+}
+
+  /* LOGO */
  .logo {
   width: 33%;
   max-width: 1536px;
@@ -253,24 +331,37 @@ color:#777;
   transform: scale(1.1);
   transition: 0.2s;
 }
-  </style>
+  
+</style>
+
 </head>
 
 <body>
+
 <header>
 
 <img src="logo_transparent.png" class="logo">
 
 
+
+<nav>
+<a href="#appartamento">Appartamenti</a>
+<a href="#servizi">Servizi</a>
+<a href="#turismo">Cosa vedere</a>
+<a href="#gastronomia">Consigli enogastronomici</a>
+<a href="#prenota">Prenota</a>
+<a href="faq.html" target="_blank">FAQ</a> 
+</nav>
+
 <div id="google_translate_element"></div>
 
 </header>
-  
+
 <div class="container">
 
   <h1>⭐ Valuta il tuo soggiorno</h1>
 
-  <form action="https://formspree.io/f/xgopyeqq" method="POST">
+  <form action="https://formspree.io/f/TUO_ID" method="POST">
 
     <!-- Hidden inputs -->
     <input type="hidden" name="Pulizia" id="pulizia">
@@ -312,15 +403,17 @@ color:#777;
     <button type="submit">Invia feedback</button>
 
   </form>
-
 </div>
 
-<footer>
-<p>
-Appartamenti vacanze a Fénis, vicino al Castello di Fénis, ideali per visitare la Valle d'Aosta e soggiornare in una posizione tranquilla e strategica.
-</p>
 
+  
+<footer>
+<p><p>
+Appartamenti vacanze a Fénis, vicino al Castello di Fénis, ideali per visitare la Valle d'Aosta e soggiornare in una posizione tranquilla e strategica.
+</p></p>
+  <a href="faq.html" target="_blank">Domande frequenti</a>
 </footer>
+
 
   <div class="contact-box">
   <span class="label">💬 Scrivici</span>
@@ -385,7 +478,9 @@ Appartamenti vacanze a Fénis, vicino al Castello di Fénis, ideali per visitare
     </a>
   </div>
 </div>
-  
+
+
+
 <script>
   function createStars(container) {
     for (let i = 1; i <= 5; i++) {
@@ -404,7 +499,7 @@ Appartamenti vacanze a Fénis, vicino al Castello di Fénis, ideali per visitare
 
   document.querySelectorAll('.stars').forEach(createStars);
 </script>
-
+  
   <script>
 function googleTranslateElementInit() {
   new google.translate.TranslateElement(
@@ -419,7 +514,43 @@ function googleTranslateElementInit() {
 
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-  
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
